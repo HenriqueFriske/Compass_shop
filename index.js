@@ -7,7 +7,7 @@ const products = Array.from({ length: 63 }, (_, i) => ({
     "Luxury big sofa",
     "Outdoor bar table and stool",
   ][i % 4],
-  price: ["Rp 2.500.000", "Rp 2.500.000", "Rp 7.000.000", "Rp 500.000"][i % 4],
+  price: ["Rp 2.500.000", "Rp 4.500.000", "Rp 7.000.000", "Rp 1500.000"][i % 4],
   image: `./img/imagem${(i % 4) + 1}.png`,
   oldPrice:
     i % 4 === 0 || i % 4 === 2
@@ -68,7 +68,6 @@ function displayProducts() {
       productPrice.appendChild(oldPrice);
     }
 
-    // productPrice.innerHTML += `${product.price}`;
     productData.appendChild(productPrice);
     productCard.appendChild(productData);
     productCard.appendChild(discountContainer);
@@ -87,6 +86,9 @@ function changeItemsPerPage() {
   displayProducts();
 }
 
+
+
+
 function previousPage() {
   if (currentPage > 1) {
     currentPage--;
@@ -99,6 +101,47 @@ function nextPage() {
     currentPage++;
     displayProducts();
   }
+}
+
+function sortByAlphabet() {
+  products.sort((a, b) => a.name.localeCompare(b.name));
+  currentPage = 1;
+  displayProducts();
+}
+
+function sortByPrice() {
+  products.sort((a, b) => {
+    // Extrair e converter os valores de preço para números
+    const priceA = parseFloat(a.price.replace(/\D/g, ''));
+    const priceB = parseFloat(b.price.replace(/\D/g, ''));
+    
+    // Comparar os valores numéricos
+    return priceA - priceB;
+  });
+  currentPage = 1;
+  displayProducts();
+}
+
+function sortProducts() {
+  const sortSelector = document.getElementById("sortSelector");
+  const selectedOption = sortSelector.value;
+
+  if (selectedOption === "alphabetical") {
+    sortByAlphabet();
+  } else if (selectedOption === "price") {
+    sortByPrice();
+  }
+}
+function toggleFilterOptions() {
+  const filterOptions = document.getElementById("filterOptions");
+  filterOptions.classList.toggle("show");
+}
+
+
+
+function toggleFilterSelector() {
+  const filterSelector = document.getElementById("filterSelector");
+  filterSelector.style.display = filterSelector.style.display === "none" ? "block" : "none";
 }
 
 window.onload = displayProducts;

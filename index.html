@@ -47,10 +47,17 @@
         </section>
         <section class="filter">
             <section class="filter2">
-                <img src="./svg/filter.svg" alt="filtro"> Filter
+                <div class="dropdown">
+                  <img src="./svg/filter.svg" alt="filtro" onclick="toggleFilterOptions()"> Filter
+                  <div id="filterOptions" class="dropdown-content">
+                    <a href="#" onclick="sortByAlphabet()">Sort A-Z</a>
+                    <a href="#" onclick="sortByPrice()">Sort Price</a>
+                  </div>
+                </div>
                 <p>Showing <span id="startIndex">1</span>-<span id="endIndex">16</span> of <span id="totalResults">50</span> results</p>
-            </section>
-            
+              </section>
+              
+              
             <select id="itemsPerPage" onchange="changeItemsPerPage()">
                 <option value="8">Show 8</option>
                 <option value="16">Show 16</option>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compass Shop</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="">
+            <h1>Compass</h1>
+        </div>
+        
+            <ul>
+                <li class="meio"><a href="#">Home</a></li>
+                <li class="meio"><a href="#">Shop</a></li>
+                <li class="meio"><a href="#">About</a></li>
+                <li class="meio"><a href="#">Contact</a></li>
+            </ul>
+            <ul class="icons">
+                <li>
+                    <a href="#"><img src="./svg/user.svg" alt="User"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./svg/lupa.svg" alt="Search"></a>
+
+                </li>
+                <li>
+                    <a href="#"><img src="./svg/like.svg" alt="Wishlist"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./svg/chart.svg" alt="Cart"></a>
+                </li>
+
+            </ul>
+        
+    </header>
+    
+    <main>
+        <section class="shop-header">
+            <div class="banner-image"></div>
+            <div class="banner-content">
+                <h2>Shop</h2>
+                <p>Home > Shop</p>
+            </div>
+        </section>
+        <section class="filter">
+            <section class="filter2">
+                <img src="./svg/filter.svg" alt="filtro"> Filter
+                <p>Showing <span id="startIndex">1</span>-<span id="endIndex">16</span> of <span id="totalResults">50</span> results</p>
+            </section>
+            
+            <select id="itemsPerPage" onchange="changeItemsPerPage()">
+                <option value="8">Show 8</option>
+                <option value="16">Show 16</option>
+                <option value="32">Show 32</option>
+                <option value="64">Show 64</option>
+            </select>
+        </section>
+        <section id="productContainer" class="products">
+            <!-- Product cards will be dynamically inserted here -->
+        </section>
+        <section class="pagination">
+            <button onclick="previousPage()">Previous</button>
+            <button onclick="nextPage()">Next</button>
+        </section>
+    </main>
+    <footer>
+        <section class="footer-info">
+            <div class="info-box">
+                <img src="./svg/trofeu.svg" alt="High Quality Icon"> 
+                <div class="info-text">
+                    <h4>High Quality</h4>
+                    <p>crafted from top materials</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <img src="./svg/warranti.svg" alt="Warranty Protection Icon">
+                <div class="info-text">
+                    <h4>Warranty Protection</h4>
+                    <p>Over 2 years</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <img src="./svg/shipping.svg" alt="Free Shipping Icon">
+                <div class="info-text">
+                    <h4>Free Shipping</h4>
+                    <p>Order over 150 $</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <img src="./svg/atendente.svg" alt="24/7 Support Icon">
+                <div class="info-text">
+                    <h4>24 / 7 Support</h4>
+                    <p>Dedicated support</p>
+                </div>
+            
+            </div>
+        </section>
+        <section class="footer-bottom">
+            <p>Rua Alexandre Dumas, 1711 - 6º andar - Chácara Santo Antônio, São Paulo - SP, 04717-004</p>
+            
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policies</a>
+                <a href="#">Returns</a>
+                <a href="#">Payment Options</a>
+            </div>
+        </section>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+
+
+

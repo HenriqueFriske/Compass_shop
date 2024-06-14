@@ -1,4 +1,4 @@
-const products = Array.from({ length: 63 }, (_, i) => ({
+const products = Array.from({ length: 65 }, (_, i) => ({
   id: i + 1,
   name: ["Sytherine", "Leviosa", "Lolito", "Respira"][i % 4],
   description: [

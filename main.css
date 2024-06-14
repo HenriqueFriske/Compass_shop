@@ -257,7 +257,7 @@ ul li a {
 }
 .pagination button:hover {
 background: rgba(184, 142, 47, 1);
-  ;
+color: #fff;
   cursor: pointer;
   font-weight: bold;
 }

@@ -16,7 +16,7 @@ const products = Array.from({ length: 65 }, (_, i) => ({
   discount: Math.floor(Math.random() * 100),
 }));
 
-let itemsPerPage = 8;
+let itemsPerPage = 16;
 let currentPage = 1;
 
 function displayProducts() {
@@ -71,6 +71,61 @@ function displayProducts() {
     productData.appendChild(productPrice);
     productCard.appendChild(productData);
     productCard.appendChild(discountContainer);
+
+    // Adiciona os novos elementos
+    const overlay = document.createElement("div");
+    overlay.className = "overlay";
+
+    const seeDetailsButton = document.createElement("button");
+    seeDetailsButton.className = "see-details";
+    seeDetailsButton.textContent = "See Details";
+    overlay.appendChild(seeDetailsButton);
+
+    const actions = document.createElement("div");
+    actions.className = "actions";
+
+    // Link do Share
+    const share = document.createElement("a");
+    share.className = "share";
+    share.href = "#"; // Substitua pelo link real
+    const shareIcon = document.createElement("img");
+    shareIcon.src = "./svg/share.svg"; // Substitua pelo caminho real do ícone
+    shareIcon.alt = "Share Icon";
+    share.appendChild(shareIcon);
+    const shareText = document.createElement("span");
+    shareText.textContent = "Share";
+    share.appendChild(shareText);
+    actions.appendChild(share);
+
+    // Link do Compare
+    const compare = document.createElement("a");
+    compare.className = "compare";
+    compare.href = "#"; // Substitua pelo link real
+    const compareIcon = document.createElement("img");
+    compareIcon.src = "./svg/compare.svg"; // Substitua pelo caminho real do ícone
+    compareIcon.alt = "Compare Icon";
+    compare.appendChild(compareIcon);
+    const compareText = document.createElement("span");
+    compareText.textContent = "Compare";
+    compare.appendChild(compareText);
+    actions.appendChild(compare);
+
+    // Link do Like
+    const like = document.createElement("a");
+    like.className = "like";
+    like.href = "#"; // Substitua pelo link real
+    const likeIcon = document.createElement("img");
+    likeIcon.src = "./svg/likecard.svg"; // Substitua pelo caminho real do ícone
+    likeIcon.alt = "Like Icon";
+    like.appendChild(likeIcon);
+    const likeText = document.createElement("span");
+    likeText.textContent = "Like";
+    like.appendChild(likeText);
+    actions.appendChild(like);
+
+    overlay.appendChild(actions);
+    productCard.appendChild(overlay);
+
     productContainer.appendChild(productCard);
   });
 
@@ -78,7 +133,6 @@ function displayProducts() {
   document.getElementById("endIndex").textContent = endIndex;
   document.getElementById("totalResults").textContent = products.length;
 }
-
 function changeItemsPerPage() {
   const select = document.getElementById("itemsPerPage");
   itemsPerPage = parseInt(select.value);
@@ -145,3 +199,13 @@ function toggleFilterSelector() {
 }
 
 window.onload = displayProducts;
+
+function validateEmail() {
+  const email = document.getElementById('email').value;
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (regex.test(email)) {
+      alert('Thank you for subscribing!');
+  } else {
+      alert('Please enter a valid email address.');
+  }
+}

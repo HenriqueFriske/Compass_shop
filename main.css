@@ -65,7 +65,7 @@ nav ul {
 }
 
 ul li {
-  margin: 0; /* ajuste o espaçamento conforme necessário */
+  margin: 0; 
 }
 
 ul li a {
@@ -167,7 +167,7 @@ ul li a {
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: var(--filter);
 }
 
 .show {
@@ -325,3 +325,4 @@ footer {
   text-decoration: none;
   color: #000;
 }
+

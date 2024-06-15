@@ -68,9 +68,11 @@
             <!-- Product cards will be dynamically inserted here -->
         </section>
         <section class="pagination">
-            <button onclick="previousPage()">Previous</button>
-            <button onclick="nextPage()">Next</button>
+            <button id="previousButton" onclick="previousPage()">Previous</button>
+            <div id="pageButtons"></div>
+            <button id="nextButton" onclick="nextPage()">Next</button>
         </section>
+        
     </main>
     <footer>
         <section class="footer-info">

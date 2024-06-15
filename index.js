@@ -132,16 +132,16 @@ function displayProducts() {
   document.getElementById("startIndex").textContent = startIndex + 1;
   document.getElementById("endIndex").textContent = endIndex;
   document.getElementById("totalResults").textContent = products.length;
+
+  updatePagination();
 }
+
 function changeItemsPerPage() {
   const select = document.getElementById("itemsPerPage");
   itemsPerPage = parseInt(select.value);
   currentPage = 1;
   displayProducts();
 }
-
-
-
 
 function previousPage() {
   if (currentPage > 1) {
@@ -155,6 +155,38 @@ function nextPage() {
     currentPage++;
     displayProducts();
   }
+}
+
+function updatePagination() {
+  const pageButtonsContainer = document.getElementById('pageButtons');
+  pageButtonsContainer.innerHTML = '';
+
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+
+  let startPage = Math.max(1, currentPage - 1);
+  let endPage = Math.min(totalPages, currentPage + 1);
+
+  if (currentPage === 1) {
+    endPage = Math.min(3, totalPages);
+  } else if (currentPage === totalPages) {
+    startPage = Math.max(1, totalPages - 2);
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
+    const button = document.createElement('button');
+    button.innerText = i;
+    button.onclick = function () {
+      currentPage = i;
+      displayProducts();
+    };
+    if (i === currentPage) {
+      button.classList.add('active');
+    }
+    pageButtonsContainer.appendChild(button);
+  }
+
+  document.getElementById('previousButton').disabled = (currentPage === 1);
+  document.getElementById('nextButton').disabled = (currentPage === totalPages);
 }
 
 function sortByAlphabet() {
@@ -186,12 +218,11 @@ function sortProducts() {
     sortByPrice();
   }
 }
+
 function toggleFilterOptions() {
   const filterOptions = document.getElementById("filterOptions");
   filterOptions.classList.toggle("show");
 }
-
-
 
 function toggleFilterSelector() {
   const filterSelector = document.getElementById("filterSelector");

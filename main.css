@@ -2,6 +2,8 @@
   --primary: #b88e2f;
   --filter:rgba(249, 241, 231, 1);
   --cinza: rgba(137, 137, 137, 1);
+  --desc: rgba(176, 176, 176, 1);
+
 
 }
 * {
@@ -240,7 +242,7 @@ ul li a {
 .product-card .old-price {
   font-size: 1rem;
   text-decoration: line-through;
-  color: #888;
+  color: var(--desc);
 }
 
 .product-card .overlay {
@@ -257,6 +259,15 @@ ul li a {
   justify-content: center;
   transition: opacity 0.3s ease;
   color: white;
+}
+
+.product-card h3{
+  font-size: 1.5rem;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: var(--cinza);
 }
 
 .product-card .see-details {
@@ -307,29 +318,49 @@ ul li a {
 .product-card:hover .overlay {
   opacity: 1;
 }
-
 .pagination {
-  text-align: center;
-  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 20px;
 }
 
 .pagination button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  margin: 0 19px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+#nextButton, #previousButton{
   width: 98px;
   height: 60px;
   top: 30px;
   left: 294px;
   gap: 0px;
-  border-radius: 10px;
+  border-radius: .7rem;
   opacity: 0px;
   border-color: transparent;
   background: var(--filter);
+
 }
-.pagination button:hover {
-background: rgba(184, 142, 47, 1);
-color: #fff;
-  cursor: pointer;
+#nextButton:hover, #previousButton:hover{
+  color: #ffffff;
   font-weight: bold;
+  background: var(--primary);
+
 }
+
+.pagination .active {
+  background-color: var(--primary);
+  color: white;
+}
+
+
 
 footer {
   background-color: #ffffff;

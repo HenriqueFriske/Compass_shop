@@ -153,6 +153,7 @@ ul li a {
   display: inline-block;
 }
 
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -179,8 +180,9 @@ ul li a {
 
 
 #itemsPerPage{
-  margin-right: 3rem;
+  margin-right: 1rem;
 }
+
 
 .products {
   max-width: 1236px;
@@ -476,10 +478,11 @@ footer {
 /* Adicione esta seção ao final do seu arquivo CSS */
 
 /* Media queries para telas menores */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   header {
       flex-direction: column;
       height: auto;
+      justify-content: space-between;
   }
 
   .logo {
@@ -488,8 +491,9 @@ footer {
   }
 
   header ul {
-      flex-direction: column;
+      flex-direction: row;
       gap: 1rem;
+
   }
 
   .meio {
@@ -502,8 +506,9 @@ footer {
   }
 
   .filter {
-      flex-direction: column;
-      align-items: flex-start;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       font-size: 16px; /* Diminui o tamanho da fonte do filtro */
   }
 
@@ -516,8 +521,21 @@ footer {
       grid-template-columns: repeat(2, 1fr); /* Grid de 2 colunas */
   }
 
+
+  .pagination button{
+    height: 40px;
+    width: 40px;
+  }
+
+  #nextButton, #previousButton{
+  width: 70px;
+  height: 40px;
+  margin: 0;
+  }
+
+
   .footer-info {
-      flex-direction: column;
+      flex-direction: row;
       height: auto;
       text-align: center;
   }
@@ -526,12 +544,23 @@ footer {
       justify-content: center;
       margin-bottom: 1rem;
   }
+  .info-text h4{
+    font-size: 1rem;
+  }
+
+  .info-text p{
+    font-size: 0.75rem;
+  }
+
 
   .footer {
-      flex-direction: column;
+      flex-direction: row;
       text-align: center;
   }
 
+  .footer address{
+    text-align: left;
+  }
   .footer div {
       margin: 1rem 0;
   }
@@ -551,6 +580,7 @@ footer {
 }
 
 @media (max-width: 480px) {
+
   header {
       padding: 1rem;
   }
@@ -568,13 +598,27 @@ footer {
   }
 
   .filter {
+      padding: 10px;
       font-size: 14px; /* Diminui ainda mais o tamanho da fonte do filtro */
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
   }
 
   .filter2 img {
       margin-right: 5px;
       margin-left: 1rem;
   }
+.dropdown{
+display: flex;
+align-items: center;
+}
+
+.filter p{
+  font-size: 12px;
+}
+
 
   .products {
       grid-template-columns: 1fr; /* Grid de 1 coluna */
@@ -604,11 +648,51 @@ footer {
       font-size: 0.875rem;
   }
 
+
+  .pagination button {
+  
+    margin: 0 0.7rem;
+
+  }
+
+
+/* colocar display grid no footer*/
+footer{
+  max-width: 100%;
+}
+.footer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding: 1px;
+}
+.footer-info{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-info h4{
+  font-size: 0.75rem;
+}
+
+.footer-info p{
+  font-size: 0.6rem;
+}
   .footer div {
       margin: 0.5rem 0;
   }
 
+
+.footer h2, .footer h3{
+  font-size: 1rem;
+}
+
+.footer a, .footer address{
+  font-size: 0.7rem;
+}
+
   .footer-bottom {
+    
       padding: 1rem;
   }
 }

@@ -148,7 +148,7 @@ ul li a {
   font-size: 16px;
 }
 .dropdown {
-  padding-right: 7px;
+  padding-right: 2rem;
   border-right: 1.5px solid var(--desc);
   position: relative;
   display: inline-block;
@@ -181,7 +181,7 @@ ul li a {
 
 
 #itemsPerPage{
-  margin-right: 1rem;
+  margin-right: 3rem;
 }
 
 
@@ -609,9 +609,15 @@ footer {
       margin-right: 5px;
       margin-left: 1rem;
   }
+
+
+  #itemsPerPage {
+    margin-right: 1rem;
+}
 .dropdown{
 display: flex;
 align-items: center;
+padding-right: 7px;
 }
 
 .filter p{

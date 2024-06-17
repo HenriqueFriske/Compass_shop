@@ -72,7 +72,6 @@ function displayProducts() {
     productCard.appendChild(productData);
     productCard.appendChild(discountContainer);
 
-    // Adiciona os novos elementos
     const overlay = document.createElement("div");
     overlay.className = "overlay";
 
@@ -87,9 +86,9 @@ function displayProducts() {
     // Link do Share
     const share = document.createElement("a");
     share.className = "share";
-    share.href = "#"; // Substitua pelo link real
+    share.href = "#"; // Substituir pelo link
     const shareIcon = document.createElement("img");
-    shareIcon.src = "./svg/share.svg"; // Substitua pelo caminho real do ícone
+    shareIcon.src = "./svg/share.svg"; 
     shareIcon.alt = "Share Icon";
     share.appendChild(shareIcon);
     const shareText = document.createElement("span");
@@ -100,9 +99,9 @@ function displayProducts() {
     // Link do Compare
     const compare = document.createElement("a");
     compare.className = "compare";
-    compare.href = "#"; // Substitua pelo link real
+    compare.href = "#"; // Substituir pelo link
     const compareIcon = document.createElement("img");
-    compareIcon.src = "./svg/compare.svg"; // Substitua pelo caminho real do ícone
+    compareIcon.src = "./svg/compare.svg"; 
     compareIcon.alt = "Compare Icon";
     compare.appendChild(compareIcon);
     const compareText = document.createElement("span");
@@ -113,9 +112,9 @@ function displayProducts() {
     // Link do Like
     const like = document.createElement("a");
     like.className = "like";
-    like.href = "#"; // Substitua pelo link real
+    like.href = "#"; // Substituir pelo link
     const likeIcon = document.createElement("img");
-    likeIcon.src = "./svg/likecard.svg"; // Substitua pelo caminho real do ícone
+    likeIcon.src = "./svg/likecard.svg"; 
     likeIcon.alt = "Like Icon";
     like.appendChild(likeIcon);
     const likeText = document.createElement("span");
@@ -201,7 +200,6 @@ function sortByPrice() {
     const priceA = parseFloat(a.price.replace(/\D/g, ''));
     const priceB = parseFloat(b.price.replace(/\D/g, ''));
     
-    // Comparar os valores numéricos
     return priceA - priceB;
   });
   currentPage = 1;

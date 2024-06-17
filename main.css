@@ -147,8 +147,9 @@ ul li a {
   color: #333;
   font-size: 16px;
 }
-/* Estilos para o dropdown */
 .dropdown {
+  padding-right: 7px;
+  border-right: 1.5px solid var(--desc);
   position: relative;
   display: inline-block;
 }
@@ -389,7 +390,7 @@ footer {
 }
 
 .info-box img {
-  width: 53px; /* Ajuste o tamanho do ícone conforme necessário */
+  width: 53px; 
   height: 60px;
   margin-right: 15px;
 }
@@ -475,8 +476,6 @@ footer {
 
 
 
-/* Adicione esta seção ao final do seu arquivo CSS */
-
 /* Media queries para telas menores */
 @media (max-width: 900px) {
   header {
@@ -509,7 +508,7 @@ footer {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      font-size: 16px; /* Diminui o tamanho da fonte do filtro */
+      font-size: 16px; 
   }
 
   .filter2 {
@@ -518,7 +517,7 @@ footer {
   }
 
   .products {
-      grid-template-columns: repeat(2, 1fr); /* Grid de 2 colunas */
+      grid-template-columns: repeat(2, 1fr); 
   }
 
 
@@ -575,7 +574,7 @@ footer {
   }
 
   .footer-bottom {
-      text-align: center;
+      text-align: start;
   }
 }
 
@@ -599,7 +598,7 @@ footer {
 
   .filter {
       padding: 10px;
-      font-size: 14px; /* Diminui ainda mais o tamanho da fonte do filtro */
+      font-size: 14px;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -621,7 +620,7 @@ align-items: center;
 
 
   .products {
-      grid-template-columns: 1fr; /* Grid de 1 coluna */
+      grid-template-columns: 1fr; 
   }
 
   .product-card .product-data {
@@ -692,7 +691,11 @@ footer{
 }
 
   .footer-bottom {
-    
-      padding: 1rem;
+    font-size: 0.75rem;
+    text-align: start;
+    padding: 1rem;
   }
+
+
 }
+

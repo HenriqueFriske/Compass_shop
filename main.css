@@ -515,6 +515,9 @@ footer {
       margin-bottom: 1rem;
       margin-left: 0;
   }
+  #itemsPerPage {
+    margin-bottom: 16px;
+}
 
   .products {
       grid-template-columns: repeat(2, 1fr); 
@@ -612,7 +615,8 @@ footer {
 
 
   #itemsPerPage {
-    margin-right: 1rem;
+    margin-bottom: 16px;
+    margin-right: 0.75rem;
 }
 .dropdown{
 display: flex;
